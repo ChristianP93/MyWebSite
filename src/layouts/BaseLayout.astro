@@ -1,6 +1,7 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import SpeedInsights from "@vercel/speed-insights/astro"
 
+import { getLangFromUrl } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 // Component Imports
@@ -25,6 +26,7 @@ const { title, description } = Astro.props;
 			<Nav />
 			<slot />
 			<Footer />
+			<SpeedInsights />
 		</div>
 
 		<script>

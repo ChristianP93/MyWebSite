@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import Pill from '../components/Pill.astro';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title="About | Christian Pengu" description="About Christian Pengu">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title={t('about.title')}
+				tagline={t('about.subtitle')}
+			>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">{t('about.background.title')}</h2>
+				<div class="content justify">
+					<p class="mgb-paragraph">
+						{t('about.background.content1')}
+					</p>
+
+					<p class="mgb-paragraph">
+						{t('about.background.content2')}
+					</p>
+
+					<p class="mgb-paragraph">
+						{t('about.background.content3')}
+					</p>
+					<p class="mgb-paragraph">
+						{t('about.background.content4')}
+					</p>
+					<p class="mgb-paragraph">
+						{t('about.background.content5')}
+					</p>
+					<p class="mgb-paragraph">
+						{t('about.background.content6')}
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{t('about.skills.title')}</h2>
+				<div class="content">
+					<div class="tags">
+						<Pill>Management</Pill>
+						<Pill>Agile</Pill>
+						<Pill>Leadership</Pill>
+						<Pill>Problem Solving</Pill>
+						<Pill>AWS</Pill>
+						<Pill>Terraform</Pill>
+						<Pill>Ansible</Pill>
+						<Pill>NodeJS</Pill>
+						<Pill>NestJS</Pill>
+						<Pill>TypeScript</Pill>
+						<Pill>Angular</Pill>
+						<Pill>MongoDB</Pill>
+						<Pill>Docker</Pill>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+
+	.justify {
+		text-align: justify;
+	}
+
+	.mgb-paragraph {
+		margin-bottom: 1.5rem;
+	}
+</style>

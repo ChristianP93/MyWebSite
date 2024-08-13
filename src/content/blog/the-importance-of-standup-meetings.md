@@ -12,7 +12,7 @@ tags:
   - Agile
 ---
 
-# The Importance of Standup Meetings
+## The Importance of Standup Meetings
 
 In any type of organization, regardless of size or project type, a team's ability to communicate effectively and remain aligned is crucial for success. I have had the opportunity to see how standup meetings, when executed correctly, can transform a group's productivity and cohesion. This article explores why these brief daily meetings are crucial and how they can be optimized to maximize their value.
 

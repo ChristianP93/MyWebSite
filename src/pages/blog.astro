@@ -10,6 +10,7 @@ import Grid from '../components/Grid.astro';
 
 // i18n imports
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import MediumArticles from '../components/MediumArticles.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -30,13 +31,7 @@ const articles = (await getCollection('blog')).sort(
 				align="start"
 			/>
 			<Grid variant="offset">
-				{
-					articles.map((article) => (
-						<li>
-							<PortfolioPreview article={article} />
-						</li>
-					))
-				}
+				<MediumArticles limit="5"/>
 			</Grid>
 		</main>
 		<ContactCTA />

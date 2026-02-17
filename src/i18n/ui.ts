@@ -13,7 +13,7 @@ export const languages = {
       'badge.role.devops': 'Cloud Architect',
       'badge.role.manager': 'AI Explorer',
       'badge.role.writer': 'Writer',
-      'who.iam.title': 'Hello, my name is Christian Pengu',
+      'who.iam.title': 'I\'m Christian Pengu,',
       'who.iam.subtitle': 'I build the teams and systems that turn ideas into products. Engineering leadership, cloud-native architectures, and a growing obsession with AI.',
       'cta.claim': 'Why not get in touch? Write to me!',
       'cta.label': 'Send Me a Message',
